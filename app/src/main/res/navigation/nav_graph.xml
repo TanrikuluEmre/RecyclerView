@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.recyclerviewapp.scenes.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_mainFragment_to_fragment_row"
+            app:destination="@id/fragment_row" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_row"
+        android:name="com.example.recyclerviewapp.scenes.Fragment_row"
+        android:label="Fragment_row" >
+        <action
+            android:id="@+id/action_fragment_row_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="collectionName"
+            app:argType="string" />
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <argument
+            android:name="collectionPrice"
+            app:argType="string" />
+        <argument
+            android:name="artworkUrl"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>
